@@ -8,9 +8,11 @@ import com.github.galcyurio.textholdermvvm.misc.LocalRepository
 class TextViewModel(
     private val localRepository: LocalRepository
 ) : ViewModel() {
-    val simpleText: MutableLiveData<SimpleText>
-        get() = localRepository.simpleText
+    val simpleText = MutableLiveData<SimpleText>()
 
+    init {
+        simpleText.value = localRepository.read()
+    }
     fun save(title: String, detail: String) {
         localRepository.save(SimpleText(title, detail))
     }

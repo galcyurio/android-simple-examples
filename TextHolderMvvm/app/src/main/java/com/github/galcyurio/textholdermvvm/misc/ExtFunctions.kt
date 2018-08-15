@@ -1,6 +1,9 @@
 package com.github.galcyurio.textholdermvvm.misc
 
 import android.arch.lifecycle.*
+import android.databinding.DataBindingUtil
+import android.databinding.ViewDataBinding
+import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.widget.EditText
 
@@ -17,3 +20,8 @@ fun <T> LiveData<T>.observe(lifecycleOwner: LifecycleOwner,
 }
 
 fun EditText.string(): String = text.toString()
+
+fun <T : ViewDataBinding> AppCompatActivity.setContentView2(
+    @LayoutRes layoutId: Int): T {
+    return DataBindingUtil.setContentView(this, layoutId)
+}
