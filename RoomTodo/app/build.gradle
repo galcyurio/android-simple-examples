@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.github.galcyurio.roomtodo"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation deps.kotlin
+    implementation deps.mosby, { exclude group: 'com.android.support', module: 'support-v4' }
+    implementation deps.rxAndroid, deps.rxKotlin
+    implementation deps.koin, deps.koinArch
+    implementation deps.roomRuntime, deps.roomRx
+    kapt deps.roomCompiler
+    implementation deps.ankoCommons
+
+    implementation deps.appCompat, deps.constraint, deps.recyclerView
+    testImplementation deps.junit
+    androidTestImplementation deps.runner, deps.espresso
+}
