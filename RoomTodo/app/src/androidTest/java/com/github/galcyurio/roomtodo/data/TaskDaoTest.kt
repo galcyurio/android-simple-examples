@@ -31,7 +31,7 @@ class TaskDaoTest {
         val task = Task(task = "dummy task", detail = "dummy detail")
         taskDao.insert(task)
 
-        val tasks = taskDao.findAll()
+        val tasks = taskDao.findAll(0, 10)
         println("tasks = $tasks")
     }
 
