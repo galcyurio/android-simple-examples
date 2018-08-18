@@ -1,5 +1,6 @@
 package com.github.galcyurio.livedataupdownsample
 
+import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,5 +15,9 @@ class MainActivity : AppCompatActivity() {
         viewModel = NumberViewModel()
         btnUp.setOnClickListener { viewModel.plus() }
         btnDown.setOnClickListener { viewModel.minus() }
+
+        viewModel.number.observe(this, Observer {
+            tvNumber.text = it?.toString()
+        })
     }
 }
