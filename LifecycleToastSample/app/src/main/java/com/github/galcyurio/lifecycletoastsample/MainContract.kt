@@ -1,6 +1,9 @@
 package com.github.galcyurio.lifecycletoastsample
 
 interface MainContract {
-    interface View
+    interface View {
+        fun showCurrentLifecycle()
+    }
+
     interface Presenter
 }
