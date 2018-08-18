@@ -6,11 +6,14 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {
+    private lateinit var presenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        presenter = MainPresenter(this)
+        lifecycle.addObserver(presenter)
         btnLifecycle.setOnClickListener { showCurrentLifecycle() }
     }
 
