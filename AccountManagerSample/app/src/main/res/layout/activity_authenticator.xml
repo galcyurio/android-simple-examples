@@ -9,24 +9,26 @@
     tools:context=".AuthenticatorActivity"
     >
 
-    <TextView
+    <EditText
         android:id="@+id/email"
         android:layout_width="0dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:gravity="start"
         android:hint="이메일"
+        android:inputType="textEmailAddress"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:gravity="start"
         android:hint="비밀번호"
+        android:inputType="textPassword"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

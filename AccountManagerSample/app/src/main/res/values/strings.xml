@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AccountManagerSample</string>
     <string name="title_activity_authenticator">Sign in</string>
+    <string name="account_type">com.github.galcyurio</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
