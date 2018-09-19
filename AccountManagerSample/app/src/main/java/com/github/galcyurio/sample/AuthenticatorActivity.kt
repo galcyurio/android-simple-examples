@@ -1,13 +1,13 @@
 package com.github.galcyurio.sample
 
 import android.accounts.Account
+import android.accounts.AccountAuthenticatorActivity
 import android.accounts.AccountManager
 import android.app.Activity
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_authenticator.*
 
-class AuthenticatorActivity : AppCompatActivity() {
+class AuthenticatorActivity : AccountAuthenticatorActivity() {
     private lateinit var accountManager: AccountManager
     private lateinit var accountType: String
     private lateinit var authTokenType: String
@@ -33,7 +33,7 @@ class AuthenticatorActivity : AppCompatActivity() {
         val authToken = AuthUseCase.signIn(email, password) // 서버에 로그인 요청 (실제로는 비동기)
 
         if (authToken.isNullOrEmpty()) {
-            
+
         } else {
             val account = Account(email, accountType)
             accountManager.addAccountExplicitly(account, password, null)
