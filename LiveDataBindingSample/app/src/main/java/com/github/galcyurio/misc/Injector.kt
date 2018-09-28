@@ -1,5 +1,6 @@
 package com.github.galcyurio.misc
 
+import com.github.galcyurio.model.DoggyRepository
 import com.github.galcyurio.model.KittyRepository
 import com.github.galcyurio.viewmodel.MainViewModelFactory
 
@@ -8,6 +9,6 @@ import com.github.galcyurio.viewmodel.MainViewModelFactory
  */
 object Injector {
     fun provideMainViewModelFactory(): MainViewModelFactory {
-        return MainViewModelFactory(KittyRepository())
+        return MainViewModelFactory(KittyRepository(), DoggyRepository())
     }
 }
