@@ -7,6 +7,6 @@ import com.github.galcyurio.roomtodo.data.domain.Task
 @Database(
     entities = [Task::class],
     version = 1)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao
 }

@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="56dp"
+    android:paddingStart="8dp"
     android:paddingEnd="8dp"
-    android:paddingStart="8dp">
+    >
 
     <TextView
         android:id="@+id/txtNumber"
@@ -20,7 +21,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="1"/>
+        tools:text="1"
+        />
 
     <TextView
         android:id="@+id/txtTask"
@@ -36,7 +38,8 @@
         app:layout_constraintStart_toEndOf="@id/txtNumber"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        tools:text="Dummy title"/>
+        tools:text="Dummy title"
+        />
 
     <TextView
         android:id="@+id/txtDetail"
@@ -50,6 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/txtNumber"
         app:layout_constraintTop_toBottomOf="@id/txtTask"
-        tools:text="Dummy detail"/>
+        tools:text="Dummy detail"
+        />
 
 </android.support.constraint.ConstraintLayout>
