@@ -1,6 +1,7 @@
 package com.github.galcyurio.roomtodo.ui.tasks
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.galcyurio.roomtodo.R
 import com.github.galcyurio.roomtodo.misc.TaskItemAdapter
@@ -10,7 +11,6 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_tasks.*
-import org.jetbrains.anko.toast
 import org.koin.android.architecture.ext.viewModel
 
 class TasksActivity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class TasksActivity : AppCompatActivity() {
             .subscribeBy(
                 onSuccess = taskItemAdapter::addTasks,
                 onError = { error ->
-                    toast("오류가 발생하였습니다")
+                    Toast.makeText(this, "오류가 발생하였습니다", Toast.LENGTH_SHORT).show()
                     error.printStackTrace()
                 }
             )

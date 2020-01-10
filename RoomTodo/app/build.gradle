@@ -33,7 +33,6 @@ dependencies {
     implementation deps.koin, deps.koinArch
     implementation deps.roomRuntime, deps.roomRx
     kapt deps.roomCompiler
-    implementation deps.ankoCommons
 
     implementation deps.appCompat, deps.constraint, deps.recyclerView
     testImplementation deps.junit

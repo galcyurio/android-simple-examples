@@ -9,7 +9,6 @@ buildscript {
                 rxKotlin        : '2.2.0',
                 koin            : '0.9.3',
                 room            : '2.0.0',
-                anko            : '0.10.5',
 
                 appCompat       : '1.0.0',
                 recyclerView    : '1.0.0',
@@ -30,7 +29,6 @@ buildscript {
                 roomRuntime  : "androidx.room:room-runtime:$versions.room",
                 roomCompiler : "androidx.room:room-compiler:$versions.room",
                 roomRx       : "androidx.room:room-rxjava2:$versions.room",
-                ankoCommons  : "org.jetbrains.anko:anko-commons:$versions.anko",
 
                 appCompat    : "androidx.appcompat:appcompat:$versions.appCompat",
                 constraint   : "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
