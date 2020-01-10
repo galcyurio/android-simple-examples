@@ -1,6 +1,6 @@
 package com.github.galcyurio.roomtodo.ui.tasks
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.github.galcyurio.roomtodo.data.TaskDao
 import com.github.galcyurio.roomtodo.data.domain.Task
 import io.reactivex.Single

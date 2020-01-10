@@ -1,6 +1,6 @@
 package com.github.galcyurio.roomtodo.misc
 
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import com.github.galcyurio.roomtodo.data.AppDatabase
 import com.github.galcyurio.roomtodo.ui.tasks.TasksViewModel
 import org.koin.android.architecture.ext.viewModel

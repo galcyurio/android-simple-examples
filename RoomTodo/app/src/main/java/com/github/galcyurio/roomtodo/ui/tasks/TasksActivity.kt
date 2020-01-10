@@ -1,7 +1,7 @@
 package com.github.galcyurio.roomtodo.ui.tasks
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.github.galcyurio.roomtodo.R
 import com.github.galcyurio.roomtodo.misc.TaskItemAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
