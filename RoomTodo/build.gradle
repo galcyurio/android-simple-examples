@@ -29,9 +29,12 @@ buildscript {
                         scope    : "org.koin:koin-androidx-scope:$versions.koin",
                         viewModel: "org.koin:koin-androidx-viewmodel:$versions.koin",
                 ],
-                roomRuntime     : "androidx.room:room-runtime:$versions.room",
-                roomCompiler    : "androidx.room:room-compiler:$versions.room",
-                roomRx          : "androidx.room:room-rxjava2:$versions.room",
+                room            : [
+                        runtime : "androidx.room:room-runtime:$versions.room",
+                        compiler: "androidx.room:room-compiler:$versions.room",
+                        rx      : "androidx.room:room-rxjava2:$versions.room",
+                        ktx     : "androidx.room:room-ktx:$versions.room"
+                ],
 
                 appCompat       : "androidx.appcompat:appcompat:$versions.appCompat",
                 constraintLayout: "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
