@@ -11,7 +11,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_tasks.*
-import org.koin.android.architecture.ext.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TasksActivity : AppCompatActivity() {
     private val viewModel: TasksViewModel by viewModel()
@@ -22,7 +22,7 @@ class TasksActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tasks)
 
-        recycler.adapter = TaskItemAdapter()
+        recycler.adapter = taskItemAdapter
 
         viewModel.fetchTasks()
             .subscribeOn(Schedulers.io())

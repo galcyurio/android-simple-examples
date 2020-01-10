@@ -30,7 +30,7 @@ android {
 dependencies {
     implementation deps.kotlin
     implementation deps.rxAndroid, deps.rxKotlin
-    implementation deps.koin, deps.koinArch
+    implementation deps.koin.core, deps.koin.android, deps.koin.scope, deps.koin.viewModel
     implementation deps.roomRuntime, deps.roomRx
     kapt deps.roomCompiler
 
