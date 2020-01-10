@@ -29,7 +29,6 @@ android {
 
 dependencies {
     implementation deps.kotlin
-    implementation deps.mosby, { exclude group: 'com.android.support', module: 'support-v4' }
     implementation deps.rxAndroid, deps.rxKotlin
     implementation deps.koin, deps.koinArch
     implementation deps.roomRuntime, deps.roomRx
