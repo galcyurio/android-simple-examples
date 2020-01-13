@@ -35,7 +35,7 @@ dependencies {
     implementation deps.room.runtime, deps.room.rx
     kapt deps.room.compiler
 
-    implementation deps.appCompat, deps.constraintLayout, deps.recyclerView
+    implementation deps.appCompat, deps.constraintLayout, deps.recyclerView, deps.material
     testImplementation deps.junit
     androidTestImplementation deps.runner, deps.espresso
 }
