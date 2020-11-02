@@ -44,6 +44,7 @@ dependencies {
 
     /* Dagger */
     implementation("com.google.dagger:dagger:${Versions.dagger}")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt("com.google.dagger:dagger-compiler:${Versions.dagger}")
     implementation("com.google.dagger:dagger-android:${Versions.dagger}")
     kapt("com.google.dagger:dagger-android-processor:${Versions.dagger}")
