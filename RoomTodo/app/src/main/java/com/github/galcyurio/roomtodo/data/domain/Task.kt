@@ -1,12 +1,12 @@
 package com.github.galcyurio.roomtodo.data.domain
 
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity
 data class Task(
-    var task: String? = null,
-    var detail: String? = null
+    val task: String,
+    val detail: String? = null
 ) {
-    @PrimaryKey(autoGenerate = true) var id: Long? = null
+    @PrimaryKey(autoGenerate = true) var id: Long = 0
 }

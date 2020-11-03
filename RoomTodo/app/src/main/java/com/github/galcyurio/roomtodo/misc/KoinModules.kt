@@ -1,18 +1,18 @@
 package com.github.galcyurio.roomtodo.misc
 
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import com.github.galcyurio.roomtodo.data.AppDatabase
-import com.github.galcyurio.roomtodo.ui.tasks.TasksContract
-import com.github.galcyurio.roomtodo.ui.tasks.TasksPresenter
+import com.github.galcyurio.roomtodo.ui.tasks.TasksViewModel
 import org.koin.android.ext.koin.androidApplication
-import org.koin.dsl.module.applicationContext
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
-val module = applicationContext {
-    bean {
+val appModule = module {
+    single {
         Room.databaseBuilder(androidApplication(), AppDatabase::class.java, "task-db").build()
     }
 
-    bean { get<AppDatabase>().taskDao() }
+    single { get<AppDatabase>().taskDao() }
 
-    bean<TasksContract.Presenter> { TasksPresenter(get()) }
+    viewModel { TasksViewModel(get()) }
 }

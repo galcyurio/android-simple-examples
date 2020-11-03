@@ -1,12 +1,18 @@
 package com.github.galcyurio.roomtodo
 
 import android.app.Application
-import com.github.galcyurio.roomtodo.misc.module
-import org.koin.android.ext.android.startKoin
+import com.github.galcyurio.roomtodo.misc.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
 class TodoApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        startKoin(listOf(module))
+        startKoin {
+            androidLogger()
+            androidContext(this@TodoApp)
+            modules(appModule)
+        }
     }
 }

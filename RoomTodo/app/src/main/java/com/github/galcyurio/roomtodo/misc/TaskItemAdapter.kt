@@ -1,9 +1,9 @@
 package com.github.galcyurio.roomtodo.misc
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.github.galcyurio.roomtodo.R
 import com.github.galcyurio.roomtodo.data.domain.Task
 import kotlinx.android.synthetic.main.item_task.view.*

@@ -1,6 +1,6 @@
 package com.github.galcyurio.roomtodo.data
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import com.github.galcyurio.roomtodo.data.domain.Task
 import io.reactivex.Maybe
 import io.reactivex.Single

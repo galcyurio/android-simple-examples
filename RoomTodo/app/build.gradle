@@ -4,14 +4,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.github.galcyurio.roomtodo"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         kapt {
             arguments {
@@ -25,18 +25,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding { enabled = true }
 }
 
 dependencies {
     implementation deps.kotlin
-    implementation deps.mosby, { exclude group: 'com.android.support', module: 'support-v4' }
     implementation deps.rxAndroid, deps.rxKotlin
-    implementation deps.koin, deps.koinArch
-    implementation deps.roomRuntime, deps.roomRx
-    kapt deps.roomCompiler
-    implementation deps.ankoCommons
+    implementation deps.koin.core, deps.koin.android, deps.koin.scope, deps.koin.viewModel
+    implementation deps.room.runtime, deps.room.rx
+    kapt deps.room.compiler
 
-    implementation deps.appCompat, deps.constraint, deps.recyclerView
+    implementation deps.appCompat, deps.constraintLayout, deps.recyclerView, deps.material
     testImplementation deps.junit
     androidTestImplementation deps.runner, deps.espresso
 }

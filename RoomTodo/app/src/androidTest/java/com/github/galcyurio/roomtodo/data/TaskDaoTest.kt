@@ -1,8 +1,8 @@
 package com.github.galcyurio.roomtodo.data
 
-import android.arch.persistence.room.Room
-import android.support.test.InstrumentationRegistry
-import android.support.test.runner.AndroidJUnit4
+import androidx.room.Room
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import com.github.galcyurio.roomtodo.data.domain.Task
 import org.junit.After
 import org.junit.Before
@@ -16,7 +16,7 @@ class TaskDaoTest {
 
     @Before
     fun setUp() {
-        val context = InstrumentationRegistry.getTargetContext()
+        val context = InstrumentationRegistry.getInstrumentation().context
         appDatabase = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         taskDao = appDatabase.taskDao()
     }
